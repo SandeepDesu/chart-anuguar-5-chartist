@@ -36,7 +36,6 @@ export class LineChartComponent implements OnInit {
         }
       });
       chart.on('draw', function(data) {
-        console.log(data);
         if(data.type === 'grid' && data.index !== 0) {
           data.element.remove();
         }
