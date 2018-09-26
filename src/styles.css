@@ -1,7 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-.ct-chart .ct-grid {
+  .ct-chart .ct-grid {
     stroke-dasharray: none;
   }
-.ct-label {
-  color:black;
+  .ct-label {
+    color: #1fe47a;
+    font-size: x-small;
+  }
+
+.ct-bar {
+  stroke-width: 50px;
+}
+.ct-series-a .ct-point, .ct-series-a .ct-line, .ct-series-a .ct-bar, .ct-series-a .ct-slice-donut {
+  stroke: #0289d7;
 }

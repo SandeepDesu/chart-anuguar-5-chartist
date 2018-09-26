@@ -4,15 +4,21 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { DemoComponent } from './demo/demo.component';
 
 const routes: Routes = [
   { path: 'line-chart', component: LineChartComponent },
-  { path: '', redirectTo: '/line-chart', pathMatch: 'full' }
+  { path: 'bar-chart', component: BarChartComponent },
+  { path: 'demo', component: DemoComponent },
+  { path: '', redirectTo: '/demo', pathMatch: 'full' }
 ];
 @NgModule({
   declarations: [
     AppComponent,
-    LineChartComponent
+    LineChartComponent,
+    BarChartComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,

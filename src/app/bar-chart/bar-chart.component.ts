@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
-import { lineChart } from '../../example';
+import { barData } from '../../example';
 
 @Component({
-  selector: 'app-line-chart',
-  templateUrl: './line-chart.component.html',
-  styleUrls: ['./line-chart.component.css']
+  selector: 'app-bar-chart',
+  templateUrl: './bar-chart.component.html',
+  styleUrls: ['./bar-chart.component.css']
 })
-
-export class LineChartComponent implements OnInit {
+export class BarChartComponent implements OnInit {
   labels = [];
   data = [];
   constructor() { }
 
   ngOnInit() {
-    lineChart.data[0].values.forEach((value) => {
+    barData.data[0].values.forEach((value) => {
       this.labels.push(value.x);
       this.data.push(value.y);
     });
@@ -23,7 +22,7 @@ export class LineChartComponent implements OnInit {
 
 
   createChart() {
-    let chart = new Chartist.Line('#line-chart', {
+    let chart = new Chartist.Bar('#bar-chart', {
       labels: this.labels,
       series: [this.data]
     }, {
