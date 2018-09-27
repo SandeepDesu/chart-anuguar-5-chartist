@@ -28,7 +28,7 @@ export class AreaComponent implements OnInit {
       series: [this.data]
     }, {
         fullWidth: true,
-        showArea:true,
+        showArea: true,
         chartPadding: {
           right: 40
         },
@@ -47,4 +47,5 @@ export class AreaComponent implements OnInit {
       }
     });
 
+  }
 }
