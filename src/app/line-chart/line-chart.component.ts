@@ -31,15 +31,20 @@ export class LineChartComponent implements OnInit {
         chartPadding: {
           right: 40
         },
-        axisX:{
+        axisX: {
           labelFontSize: 20,
+        },
+        axisY: {
+          labelInterpolationFnc: function (value) {
+            return Math.round(value);
+          }
         }
       });
-      chart.on('draw', function(data) {
-        if(data.type === 'grid' && data.index !== 0) {
-          data.element.remove();
-        }
-      });
+    chart.on('draw', function (data) {
+      if (data.type === 'grid' && data.index !== 0) {
+        data.element.remove();
+      }
+    });
   }
 
 }

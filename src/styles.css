@@ -13,3 +13,6 @@
 .ct-series-a .ct-point, .ct-series-a .ct-line, .ct-series-a .ct-bar, .ct-series-a .ct-slice-donut {
   stroke: #0289d7;
 }
+.ct-line {
+  stroke-width: 1px;
+}

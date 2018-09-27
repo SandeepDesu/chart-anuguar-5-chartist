@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
-import { barData } from '../../example';
+import { areaChartData } from '../../example';
 
 @Component({
-  selector: 'app-bar-chart',
-  templateUrl: './bar-chart.component.html',
-  styleUrls: ['./bar-chart.component.css']
+  selector: 'app-area',
+  templateUrl: './area.component.html',
+  styleUrls: ['./area.component.css']
 })
-export class BarChartComponent implements OnInit {
+
+export class AreaComponent implements OnInit {
   labels = [];
   data = [];
   constructor() { }
 
   ngOnInit() {
-    barData.data[0].values.forEach((value) => {
+    areaChartData.data[0].values.forEach((value) => {
       this.labels.push(value.x);
       this.data.push(value.y);
     });
@@ -22,11 +23,12 @@ export class BarChartComponent implements OnInit {
 
 
   createChart() {
-    let chart = new Chartist.Bar('#bar-chart', {
+    let chart = new Chartist.Line('#area-chart', {
       labels: this.labels,
       series: [this.data]
     }, {
         fullWidth: true,
+        showArea:true,
         chartPadding: {
           right: 40
         },
@@ -44,6 +46,5 @@ export class BarChartComponent implements OnInit {
         data.element.remove();
       }
     });
-  }
 
 }
