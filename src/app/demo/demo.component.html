@@ -1,23 +1,36 @@
 <div class="row">
-  <div class="col-md-4">
-    <app-line-chart></app-line-chart>
-  </div>
-  <div class="col-md-4">
-    <app-bar-chart></app-bar-chart>
-  </div>
-  <div class="col-md-4">
-    <app-stacked-bar></app-stacked-bar>
-  </div>
-  <div class="col-md-4">
-    <app-grouped-bar></app-grouped-bar>
-  </div>
-  <div class="col-md-4">
-    <app-multi-line></app-multi-line>
-  </div>
-  <div class="col-md-4">
-    <app-area></app-area>
-  </div>
-  <div class="col-md-4">
-    <app-donut></app-donut>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="title">
+        <div class="col-md-8">
+          <span>Total records</span>
+          <span>15</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="col-md-2">
+          <p></p>
+        </div>
+        <div class="col-md-8">
+          <span>Record</span>
+          <app-bar-chart *ngIf="selectedChart == 'BAR_CHART'"></app-bar-chart>
+          <app-line-chart *ngIf="selectedChart == 'LINE_CHART'"></app-line-chart>
+          <app-stacked-bar *ngIf="selectedChart == 'HORIZONTAL_CHART'"></app-stacked-bar>
+          <app-grouped-bar *ngIf="selectedChart == 'GROUPED_BAR_CHART'"></app-grouped-bar>
+          <app-multi-line *ngIf="selectedChart == 'MULTI_LINE_CHART'"></app-multi-line>
+          <app-area *ngIf="selectedChart == 'AREA_CHART'"></app-area>
+          <app-donut *ngIf="selectedChart == 'DONUT_CHART'"></app-donut>
+        </div>
+        <div class="col-md-2 icon">
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> <i class="material-icons">settings</i>
+              <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li *ngFor="let item of chartList"><a (click)="changeChart(item)">{{item}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

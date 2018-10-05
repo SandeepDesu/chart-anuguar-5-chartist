@@ -27,16 +27,12 @@ export class BarChartComponent implements OnInit {
       series: [this.data]
     }, {
         fullWidth: true,
+        horizontalBars: true,
         chartPadding: {
           right: 40
         },
         axisX: {
-          labelFontSize: 20,
-        },
-        axisY: {
-          labelInterpolationFnc: function (value) {
-            return Math.round(value);
-          }
+          labelFontSize: 10,
         }
       });
     chart.on('draw', function (data) {

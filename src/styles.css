@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+
   .ct-chart .ct-grid {
     stroke-dasharray: none;
   }
@@ -16,3 +16,52 @@
 .ct-line {
   stroke-width: 1px;
 }
+
+.ct-chart .ct-label.ct-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.container-fluid {
+  margin-top: 70px;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: auto;
+}
+
+.card-body{
+border-color:#f3f3f3;
+border-style: solid;
+border-width: 1px;
+height:350px;
+text-align: center;
+}
+
+.title {
+  font-size:12px;
+  font-weight:bold;
+  padding:10px;
+  height:50px;
+  border-style:solid;
+  border-color:lightcyan;
+  border-width: 1px;
+}
+
+.title span{
+  display: block;
+}
+ .icon {
+  text-align: right;
+  padding:10px;
+}
+i {
+  color:white;
+}
+
+
+
