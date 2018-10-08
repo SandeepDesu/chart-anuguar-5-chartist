@@ -45,7 +45,13 @@ export class StackedBarComponent implements OnInit {
         if (data.type === 'grid' && data.index !== 0) {
           data.element.remove();
         }
+        data.element.animate({
+          y2: {
+              dur: '0.6s',
+              from: data.y1,
+              to: data.y2
+          }
       });
-  }
-
+  });
+}
 }

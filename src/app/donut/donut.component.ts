@@ -10,14 +10,16 @@ import { donutData } from '../../example';
 export class DonutComponent implements OnInit {
   labels = [];
   data = [];
+  animate=null;
   constructor() { }
 
   ngOnInit() {
+  
     donutData.data[0].values.forEach((value) => {
       this.labels.push(value.x);
       this.data.push(value.y);
     });
-   let chart = new Chartist.Pie('#donut-chart', {
+    new Chartist.Pie('#donut-chart', {
       series: this.data,
       labels: this.labels
     }, {
@@ -27,6 +29,7 @@ export class DonutComponent implements OnInit {
       startAngle: 270,
       showLabel: true
     });
+
     
   }
 

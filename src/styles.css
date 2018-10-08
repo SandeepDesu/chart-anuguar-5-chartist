@@ -1,67 +1,104 @@
-
-  .ct-chart .ct-grid {
-    stroke-dasharray: none;
-  }
-  .ct-label {
-    color: #1fe47a;
-    font-size: x-small;
-  }
+.ct-chart .ct-grid {
+  stroke-dasharray: none;
+}
+.ct-label {
+  color: #1fe47a;
+  font-size: x-small;
+}
 
 .ct-bar {
-  stroke-width: 50px;
+stroke-width: 50px;
 }
 .ct-series-a .ct-point, .ct-series-a .ct-line, .ct-series-a .ct-bar, .ct-series-a .ct-slice-donut {
-  stroke: #0289d7;
+stroke: #0289d7;
 }
 .ct-line {
-  stroke-width: 1px;
+stroke-width: 1px;
 }
 
 .ct-chart .ct-label.ct-vertical {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+display: flex;
+align-items: center;
+justify-content: flex-end;
 }
 
 .container-fluid {
-  margin-top: 70px;
+margin-top: 70px;
 }
 
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 800px;
-  margin: auto;
+/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+max-width: 800px;
+margin: auto; */
 }
 
 .card-body{
-border-color:#f3f3f3;
+/* border-color:#f3f3f3;
 border-style: solid;
 border-width: 1px;
-height:350px;
+height:350px; */
 text-align: center;
 }
 
 .title {
-  font-size:12px;
-  font-weight:bold;
-  padding:10px;
-  height:50px;
-  border-style:solid;
-  border-color:lightcyan;
-  border-width: 1px;
+font-size:12px;
+font-weight:bold;
+padding:10px;
+height:50px;
+/* border-style:solid;
+border-color:lightcyan;
+border-width: 1px; */
 }
 
 .title span{
-  display: block;
+display: block;
 }
- .icon {
-  text-align: right;
-  padding:10px;
+.icon {
+text-align: right;
+padding:10px;
 }
 i {
-  color:white;
+color:white;
 }
 
+* {
+  transform-origin: 0px 0px 0px;
+}
 
+.ct-line {
+  stroke-dasharray: 5px;
+  animation: dashoffset 1s linear infinite;
+}
 
+@keyframes dashoffset {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+  100% {
+    stroke-dashoffset: -20px;
+  }
+}
+
+@keyframes bouncing-stroke {
+  0% {
+    stroke-width: 5px;
+  }
+  50% {
+    stroke-width: 10px;
+  }
+  100% {
+    stroke-width: 5px;
+  }
+}
+
+@keyframes exploding-stroke {
+  0% {
+    stroke-width: 2px;
+    opacity: 1;
+  }
+  100% {
+    stroke-width: 20px;
+    opacity: 0;
+  }
+}

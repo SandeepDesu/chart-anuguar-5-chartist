@@ -22,23 +22,28 @@ export class BarChartComponent implements OnInit {
 
 
   createChart() {
-    let chart = new Chartist.Bar('#bar-chart', {
+    new Chartist.Bar('#bar-chart', {
       labels: this.labels,
       series: [this.data]
     }, {
         fullWidth: true,
-        horizontalBars: true,
         chartPadding: {
           right: 40
         },
         axisX: {
           labelFontSize: 10,
         }
-      });
-    chart.on('draw', function (data) {
+      }).on('draw', function (data) {
       if (data.type === 'grid' && data.index !== 0) {
         data.element.remove();
       }
+      data.element.animate({
+        y2: {
+            dur: '0.6s',
+            from: data.y1,
+            to: data.y2
+        }
+    });
     });
   }
 
