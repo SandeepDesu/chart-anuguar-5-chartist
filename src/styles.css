@@ -102,3 +102,9 @@ color:white;
     opacity: 0;
   }
 }
+
+.ct-label {
+  color: #1fe47a;
+  font-size: x-small;
+  margin-top: 19px;
+}

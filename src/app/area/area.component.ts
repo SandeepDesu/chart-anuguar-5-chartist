@@ -37,11 +37,6 @@ export class AreaComponent implements OnInit {
         },
         axisX: {
           labelFontSize: 20,
-        },
-        axisY: {
-          labelInterpolationFnc: function (value) {
-            return Math.round(value);
-          }
         }
       }).on('draw', function (data) {
         if (data.type === 'grid' && data.index !== 0) {

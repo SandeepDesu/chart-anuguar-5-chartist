@@ -30,7 +30,6 @@ export class GroupedBarComponent implements OnInit {
       series:this.data
     }, {
       seriesBarDistance: 10,
-      
       axisY: {
         labelInterpolationFnc: function (value) {
           return Math.round(value);
