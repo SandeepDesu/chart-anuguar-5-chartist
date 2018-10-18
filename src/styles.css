@@ -15,29 +15,31 @@ stroke: #0289d7;
 .ct-line {
 stroke-width: 1px;
 }
+.left-section{
+  border: 1px solid lightgray;
+}
 
 .ct-chart .ct-label.ct-vertical {
 display: flex;
 align-items: center;
 justify-content: flex-end;
 }
-
+.right-menu .ct-golden-section{
+  margin: 3px;
+  border:1px solid lightgrey;
+}
 .container-fluid {
 margin-top: 70px;
 }
-
-
-.card {
-/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-max-width: 800px;
-margin: auto; */
+.ct-label {
+  color: #1fe47a;
+  font-size: x-small;
+  margin-top: 19px;
 }
 
+
+
 .card-body{
-/* border-color:#f3f3f3;
-border-style: solid;
-border-width: 1px;
-height:350px; */
 text-align: center;
 }
 
@@ -46,9 +48,6 @@ font-size:12px;
 font-weight:bold;
 padding:10px;
 height:50px;
-/* border-style:solid;
-border-color:lightcyan;
-border-width: 1px; */
 }
 
 .title span{
@@ -92,6 +91,11 @@ color:white;
   }
 }
 
+.right-menu{
+  max-height: 100vh;
+  overflow-y: scroll
+}
+
 @keyframes exploding-stroke {
   0% {
     stroke-width: 2px;
@@ -101,10 +105,4 @@ color:white;
     stroke-width: 20px;
     opacity: 0;
   }
-}
-
-.ct-label {
-  color: #1fe47a;
-  font-size: x-small;
-  margin-top: 19px;
 }

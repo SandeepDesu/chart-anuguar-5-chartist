@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-8 left-section col-md-offset-1">
     <div class="card">
       <div class="title">
         <div class="col-md-8">
@@ -8,10 +8,7 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="col-md-2">
-          <p></p>
-        </div>
-        <div class="col-md-8">
+        <div class="col-md-10 col-md-offset-1">
           <span>Record</span>
           <app-bar-chart *ngIf="selectedChart == 'BAR_CHART'"></app-bar-chart>
           <app-line-chart *ngIf="selectedChart == 'LINE_CHART'"></app-line-chart>
@@ -21,7 +18,7 @@
           <app-area *ngIf="selectedChart == 'AREA_CHART'"></app-area>
           <app-donut *ngIf="selectedChart == 'DONUT_CHART'"></app-donut>
         </div>
-        <div class="col-md-2 icon">
+        <!-- <div class="col-md-2 icon">
           <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> <i class="material-icons">settings</i>
               <span class="caret"></span></button>
@@ -29,8 +26,18 @@
               <li *ngFor="let item of chartList"><a (click)="changeChart(item)">{{item}}</a></li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
+
+  </div>
+  <div class="col-md-3 right-menu">
+    <app-bar-chart (click)="changeChart(item)"></app-bar-chart>
+    <app-line-chart (click)="changeChart(item)"></app-line-chart>
+    <app-stacked-bar (click)="changeChart(item)"></app-stacked-bar>
+    <app-grouped-bar (click)="changeChart(item)"></app-grouped-bar>
+    <app-multi-line (click)="changeChart(item)"></app-multi-line>
+    <app-area (click)="changeChart(item)"></app-area>
+    <app-donut (click)="changeChart(item)"></app-donut>
   </div>
 </div>
