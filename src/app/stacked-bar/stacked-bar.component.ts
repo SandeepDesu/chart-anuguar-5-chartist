@@ -11,6 +11,7 @@ export class StackedBarComponent implements OnInit {
   labels = [];
   data = [];
   array = [];
+  id = this.makeid();
   constructor() { }
 
   ngOnInit() {
@@ -26,7 +27,22 @@ export class StackedBarComponent implements OnInit {
         this.labels.push(value.x);
       }
     });
-    new Chartist.Bar('#stacked-bar-chart', {
+    setTimeout(() => {
+      this.createChart();
+    }, 200);
+  }
+
+  makeid() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    for (var i = 0; i < 8; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+  }
+
+  createChart() {
+    new Chartist.Bar('#' + this.id, {
       labels: this.labels,
       series: this.data
     }, {
@@ -47,11 +63,11 @@ export class StackedBarComponent implements OnInit {
         }
         data.element.animate({
           y2: {
-              dur: '0.6s',
-              from: data.y1,
-              to: data.y2
+            dur: '0.6s',
+            from: data.y1,
+            to: data.y2
           }
+        });
       });
-  });
-}
+  }
 }

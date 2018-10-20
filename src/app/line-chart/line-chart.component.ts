@@ -11,6 +11,7 @@ import { lineChart } from '../../example';
 export class LineChartComponent implements OnInit {
   labels = [];
   data = [];
+  id = this.makeid();
   constructor() { }
 
   ngOnInit() {
@@ -18,15 +19,25 @@ export class LineChartComponent implements OnInit {
       this.labels.push(value.x);
       this.data.push(value.y);
     });
-    this.createChart();
+    setTimeout(()=>{
+      this.createChart();
+    },200);
   }
 
+  makeid() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    for (var i = 0; i < 8; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    
+    return text;
+  }
 
   createChart() {
     const  seq = 0,
     delays = 80,
     durations = 1000;
-    new Chartist.Line('#line-chart', {
+    new Chartist.Line('#'+this.id, {
       labels: this.labels,
       series: [this.data]
     }, {
