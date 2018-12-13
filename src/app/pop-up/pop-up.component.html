@@ -1,0 +1,28 @@
+<div class="row">
+    <div class='col-md-4'>
+        <app-bar-chart (click)="changeChart('BAR_CHART')"></app-bar-chart>
+    </div>
+    <div class='col-md-4'>
+        <app-line-chart (click)="changeChart('LINE_CHART')"></app-line-chart>
+    </div>
+
+    <div class='col-md-4'>
+        <app-stacked-bar (click)="changeChart('HORIZONTAL_CHART')"></app-stacked-bar>
+    </div>
+
+    <div class='col-md-4'>
+        <app-grouped-bar (click)="changeChart('GROUPED_BAR_CHART')"></app-grouped-bar>
+    </div>
+
+    <div class='col-md-4'>
+        <app-multi-line (click)="changeChart('MULTI_LINE_CHART')"></app-multi-line>
+    </div>
+
+    <div class='col-md-4'>
+        <app-area (click)="changeChart('AREA_CHART')"></app-area>
+    </div>
+
+    <div class='col-md-4'>
+        <app-donut (click)="changeChart('DONUT_CHART')"></app-donut>
+    </div>
+</div>
