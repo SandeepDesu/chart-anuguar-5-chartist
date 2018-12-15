@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-8 col-md-offset-1">
           <span>Record</span>
           <app-bar-chart *ngIf="selectedChart == 'BAR_CHART'"></app-bar-chart>
           <app-line-chart *ngIf="selectedChart == 'LINE_CHART'"></app-line-chart>
@@ -18,19 +18,11 @@
           <app-area *ngIf="selectedChart == 'AREA_CHART'"></app-area>
           <app-donut *ngIf="selectedChart == 'DONUT_CHART'"></app-donut>
         </div>
+        <div class="col-md-2">
+          <button class="mdc-icon-button material-icons" (click)="changeChart()">settings</button>
+        </div>
       </div>
     </div>
-
   </div>
-  <div class="col-md-3 right-menu">
-    <app-bar-chart (click)="changeChart('BAR_CHART')"></app-bar-chart>
-    <app-line-chart (click)="changeChart('LINE_CHART')"></app-line-chart>
-    <app-stacked-bar (click)="changeChart('HORIZONTAL_CHART')"></app-stacked-bar>
-    <app-grouped-bar (click)="changeChart('GROUPED_BAR_CHART')"></app-grouped-bar>
-    <app-multi-line (click)="changeChart('MULTI_LINE_CHART')"></app-multi-line>
-    <app-area (click)="changeChart('AREA_CHART')"></app-area>
-    <app-donut (click)="changeChart('DONUT_CHART')"></app-donut>
-  </div>
-</div>
-<div id="modal-container" class="hidden"></div>
-<div id="overlay" (click)="removeModal()" class="hidden"></div>
+  <div id="modal-container" class="hidden"></div>
+  <div id="overlay" (click)="removeModal()" class="hidden"></div>

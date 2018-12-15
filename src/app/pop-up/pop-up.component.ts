@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 @Component({
     selector: 'app-pop-up',
     templateUrl: './pop-up.component.html',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class PopUpComponent implements OnInit {
+    @Output() selectedItem = new EventEmitter();
+
     constructor() { }
 
     ngOnInit() {
+    }
+
+    changeChart(item): void {
+        this.selectedItem.emit(item);
     }
 }

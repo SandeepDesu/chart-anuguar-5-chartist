@@ -11,8 +11,6 @@ import { MultiLineComponent } from './multi-line/multi-line.component';
 import { AreaComponent } from './area/area.component';
 import { DonutComponent } from './donut/donut.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
-import { ModalService } from './model.service';
-import { DomService } from './dom.service';
 const routes: Routes = [
   { path: 'line-chart', component: LineChartComponent },
   { path: 'donut-chart', component: DonutComponent },
@@ -41,7 +39,6 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DomService,ModalService],
   bootstrap: [AppComponent],
   entryComponents:[PopUpComponent]
 })
