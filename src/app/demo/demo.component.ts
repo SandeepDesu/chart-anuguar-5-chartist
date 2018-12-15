@@ -22,6 +22,12 @@ export class DemoComponent implements OnInit {
   ngOnInit() {
   }
 
+  removeModal() {
+    this.appRef.detachView(this.childComponentRef.hostView);
+    this.childComponentRef.destroy();
+    document.getElementById('modal-container').className = 'hidden';
+    document.getElementById('overlay').className = 'hidden';
+  }
 
   changeChart() {
     const childComponentRef = this.componentFactoryResolver
